@@ -6,27 +6,27 @@ const ANMOL_TASKS = [
   { label: "React + Vite Setup & Routing", branch: "feature/frontend-setup" },
   { label: "Home Page, Navbar & Footer", branch: "feature/home-page" },
   { label: "Contact Form UI + Axios Integration", branch: "feature/contact-ui" },
-  { label: "GitHub Actions CI/CD Pipeline", branch: "feature/cicd" },
-  { label: "Vercel Deployment", branch: "feature/deploy-frontend" },
+  { label: "Backend API Testing & Review", branch: "feature/api-testing" },
+  { label: "Vercel Deployment & GitHub Actions", branch: "feature/deploy-frontend" },
 ];
 
 const PRIYANSU_TASKS = [
   { label: "Node.js + Express Server Setup", branch: "feature/backend-setup" },
   { label: "MongoDB Atlas + Mongoose", branch: "feature/db-connect" },
   { label: "Projects & Contact APIs", branch: "feature/projects-api" },
-  { label: "CORS + .env Configuration", branch: "feature/backend-config" },
-  { label: "Render Deployment + Atlas Prod Config", branch: "feature/deploy-backend" },
+  { label: "Frontend UI Testing & Feedback", branch: "feature/ui-testing" },
+  { label: "Render Deployment & API Docs", branch: "feature/deploy-backend" },
 ];
 
 const TECH_STACK = [
   { icon: "⚛️", name: "React + Vite", purpose: "Frontend UI framework with fast HMR and build tooling", owner: "a" },
-  { icon: "🎨", name: "Tailwind CSS", purpose: "Utility-first CSS for rapid, responsive UI styling", owner: "a" },
+  { icon: "🎨", name: "Tailwind CSS", purpose: "Utility-first CSS for rapid, responsive UI styling", owner: "both" },
   { icon: "🛡️", name: "Node + Express", purpose: "RESTful API server with routing and middleware", owner: "p" },
-  { icon: "🍃", name: "MongoDB Atlas", purpose: "Cloud NoSQL database with Mongoose ODM", owner: "p" },
+  { icon: "🍃", name: "MongoDB Atlas", purpose: "Cloud NoSQL database with Mongoose ODM", owner: "both" },
   { icon: "▲", name: "Vercel", purpose: "Zero-config frontend deployment with Edge network", owner: "a" },
-  { icon: "🚀", name: "Render", purpose: "Backend deployment with auto-scaling web services", owner: "p" },
+  { icon: "🚀", name: "Render", purpose: "Backend deployment with auto-scaling web services", owner: "both" },
   { icon: "🐙", name: "GitHub", purpose: "Version control, PRs, branch protection rules", owner: "both" },
-  { icon: "⚙️", name: "GitHub Actions", purpose: "CI/CD pipeline: build → test → deploy on push to main", owner: "a" },
+  { icon: "⚙️", name: "GitHub Actions", purpose: "CI/CD pipeline: build → test → deploy on push to main", owner: "both" },
   { icon: "📋", name: "GitHub Projects", purpose: "Kanban board for Agile task management", owner: "both" },
 ];
 
@@ -47,7 +47,7 @@ const TIMELINE = [
     anmol: { text: "Projects API fetch + display, mobile responsive Tailwind, animations", branch: "feature/styling" },
     priyansu: { text: "Error handling for all routes, try/catch, 404 handler, Postman testing", branch: "feature/api-testing" }},
   { day: "06", label: "Deploy",
-    anmol: { text: "Vercel frontend deploy + env vars + GitHub Actions CI/CD pipeline", branch: "feature/deploy-frontend" },
+    anmol: { text: "Vercel frontend deploy + env vars + GitHub Actions CI/CD", branch: "feature/deploy-frontend" },
     priyansu: { text: "Render backend deploy + MongoDB Atlas IP whitelist for production", branch: "feature/deploy-backend" }},
   { day: "07", label: "Ship",
     anmol: { text: "Final PR review, README.md, full live site demo test", branch: null },
@@ -80,14 +80,14 @@ const KANBAN_COLS = [
     { text: "GitHub Actions CI/CD", who: "a" },
   ]},
   { title: "In Review", cards: [
-    { text: "CORS + .env Config", who: "p" },
-    { text: "Projects API Fetch (React)", who: "a" },
+    { text: "CORS + .env Config", who: "both" },
+    { text: "Projects API Fetch (React)", who: "both" },
   ]},
   { title: "Done", cards: [
     { text: "Repo + Branch Protection", who: "both" },
-    { text: "React + Vite Setup", who: "a" },
-    { text: "Express Server Setup", who: "p" },
-    { text: "MongoDB Atlas Connect", who: "p" },
+    { text: "React + Vite + Backend Config", who: "both" },
+    { text: "Express Server + Frontend Testing", who: "both" },
+    { text: "MongoDB Atlas & API Docs", who: "both" },
     { text: "Home Page + Navbar", who: "a" },
     { text: "Projects REST API", who: "p" },
     { text: "Anmol Portfolio Page", who: "a" },
@@ -324,9 +324,7 @@ export default function TeamPortfolio() {
       {/* ════════════ NAV ════════════ */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: `1.1rem ${px}`, display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #2a2a3a", background: "rgba(10,10,15,0.9)", backdropFilter: "blur(14px)" }}>
         <a href="#" style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, fontSize: isMobile ? "0.9rem" : "1.1rem", letterSpacing: "-0.02em", color: "#e8e8f0", textDecoration: "none" }}>
-          <span style={{ color: "#7fffb2" }}>Anmol</span>
-          <span style={{ color: "#6b6b88", margin: "0 0.3rem" }}>&</span>
-          <span style={{ color: "#ff6b6b" }}>Priyansu</span>
+          <span style={{ color: "#a78bfa" }}>PORTFOLIO</span>
         </a>
 
         {!isMobile && (
@@ -409,9 +407,9 @@ export default function TeamPortfolio() {
         <FadeIn>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 2, background: "#2a2a3a", border: "1px solid #2a2a3a", borderRadius: 8, overflow: "hidden" }}>
             {[
-              { accent: "#7fffb2", role: "Frontend Lead + DevOps", name: "Anmol", desc: "Owns the client-side universe — from React architecture to CI/CD pipelines and Vercel deployment. Brings the UI to life and keeps the delivery system running.", tasks: ANMOL_TASKS, skills: [["React", true], ["Tailwind CSS", true], ["Vite", true], ["Axios", false], ["Vercel", false], ["GitHub Actions", false]] },
-              { accent: "#ff6b6b", role: "Backend Lead + Database", name: "Priyansu", desc: "Masters the server and data layer — building RESTful APIs, wiring MongoDB Atlas, and deploying production backend on Render with proper security configs.", tasks: PRIYANSU_TASKS, skills: [["Node.js", true], ["Express", true], ["MongoDB", true], ["Mongoose", false], ["Render", false], ["Postman", false]] },
-            ].map(({ accent, role, name, desc, tasks, skills }) => (
+              { accent: "#7fffb2", role: "Frontend Lead + DevOps", name: "Anmol", desc: "Owns the client-side universe — from React architecture to CI/CD pipelines and Vercel deployment. Brings the UI to life and keeps the delivery system running.", mutual: ["API Integration", "Database Design", "Deployment Strategy"], tasks: ANMOL_TASKS, skills: [["React", true], ["Tailwind CSS", true], ["Vite", true], ["Axios", false], ["Vercel", false], ["GitHub Actions", false]] },
+              { accent: "#ff6b6b", role: "Backend Lead + Database", name: "Priyansu", desc: "Masters the server and data layer — building RESTful APIs, wiring MongoDB Atlas, and deploying production backend on Render with proper security configs.", mutual: ["Frontend Performance", "Error Handling", "API Documentation"], tasks: PRIYANSU_TASKS, skills: [["Node.js", true], ["Express", true], ["MongoDB", true], ["Mongoose", false], ["Render", false], ["Postman", false]] },
+            ].map(({ accent, role, name, desc, mutual, tasks, skills }) => (
               <div key={name} style={{ background: "#16161f", padding: isMobile ? "1.75rem 1.25rem" : "3rem", position: "relative", transition: "background 0.3s" }}
                 onMouseEnter={e => e.currentTarget.style.background = "#1a1a25"}
                 onMouseLeave={e => e.currentTarget.style.background = "#16161f"}
@@ -420,6 +418,11 @@ export default function TeamPortfolio() {
                 <div style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6b88", marginBottom: "0.75rem" }}>{role}</div>
                 <div style={{ fontFamily: "'Syne',sans-serif", fontSize: isMobile ? "1.75rem" : "2.2rem", fontWeight: 800, letterSpacing: "-0.04em", marginBottom: "0.5rem", color: accent }}>{name}</div>
                 <p style={{ fontSize: "0.78rem", lineHeight: 1.8, color: "#6b6b88", marginBottom: "1.5rem" }}>{desc}</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.5rem", paddingBottom: "1rem", borderBottom: "1px solid #2a2a3a" }}>
+                  {mutual.map(m => (
+                    <span key={m} style={{ fontSize: "0.62rem", padding: "0.25rem 0.6rem", borderRadius: 999, background: accent + "15", color: accent, border: `1px solid ${accent}55`, letterSpacing: "0.05em" }}>🤝 {m}</span>
+                  ))}
+                </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" }}>
                   {tasks.map(t => (
                     <div key={t.label} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", fontSize: "0.75rem", color: "#e8e8f0" }}>
