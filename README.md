@@ -1,14 +1,13 @@
 # Team Portfolio - Anmol & Priyansu
 
-A collaborative full-stack portfolio website showcasing a 7-day development sprint. Built with React, Node.js, and MongoDB.
+A collaborative portfolio website showcasing a 7-day development sprint. Built with React and Vite.
 
 ## 📋 Project Overview
 
 This portfolio demonstrates a complete team workflow:
 - **Frontend**: React + Vite + Tailwind CSS
-- **Backend**: Node.js + Express + MongoDB
-- **Deployment**: Vercel (Frontend) & Render (Backend)
-- **DevOps**: GitHub Actions CI/CD Pipeline
+- **Deployment**: Vercel with GitHub Actions CI/CD
+- **Styling**: Tailwind CSS for responsive design
 
 ## 🎯 Team Roles
 
@@ -63,12 +62,6 @@ PORTFOLIO/
 - **Vite 5.0.8** - Build tool with HMR
 - **Tailwind CSS** - Utility-first styling
 - **Axios 1.6.2** - HTTP client
-
-### Backend (Not in this repo)
-- **Node.js** - Server runtime
-- **Express.js** - Web framework
-- **MongoDB Atlas** - Cloud database
-- **Mongoose** - ODM library
 
 ### DevOps & Deployment
 - **GitHub** - Version control & collaboration
@@ -186,7 +179,7 @@ docs: Documentation changes
 Create a `.env` file in the root:
 
 ```
-VITE_API_URL=http://localhost:5000
+VITE_API_URL=http://localhost:3000
 ```
 
 ### Vite Configuration
@@ -241,7 +234,6 @@ export default {
 
 - **GitHub Repo**: https://github.com/priyansunegi-dev0/tbi-team-portfolio
 - **Live Portfolio**: https://tbi-team-portfolio.vercel.app
-- **Backend API**: https://tbi-team-portfolio-backend.onrender.com
 
 ## 📄 License
 
