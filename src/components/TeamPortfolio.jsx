@@ -3,11 +3,12 @@ import { useState, useEffect, useRef } from "react";
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const ANMOL_TASKS = [
-  { label: "React + Vite Setup & Routing", branch: "feature/frontend-setup" },
-  { label: "Home Page, Navbar & Footer", branch: "feature/home-page" },
-  { label: "Contact Form UI + Axios Integration", branch: "feature/contact-ui" },
-  { label: "Backend API Testing & Review", branch: "feature/api-testing" },
-  { label: "Vercel Deployment & GitHub Actions", branch: "feature/deploy-frontend" },
+  { label: "React Architecture & Component Design", branch: "feature/frontend-architecture" },
+  { label: "UI/UX Implementation with Tailwind CSS", branch: "feature/ui-ux-design" },
+  { label: "Responsive Design & Mobile Optimization", branch: "feature/responsive-design" },
+  { label: "API Integration & State Management", branch: "feature/api-integration" },
+  { label: "Database Schema Design & Optimization", branch: "feature/database-design" },
+  { label: "Performance Optimization & Code Splitting", branch: "feature/performance-optimization" },
 ];
 
 const PRIYANSU_TASKS = [
@@ -19,39 +20,38 @@ const PRIYANSU_TASKS = [
 ];
 
 const TECH_STACK = [
-  { icon: "⚛️", name: "React + Vite", purpose: "Frontend UI framework with fast HMR and build tooling", owner: "a" },
-  { icon: "🎨", name: "Tailwind CSS", purpose: "Utility-first CSS for rapid, responsive UI styling", owner: "both" },
-  { icon: "🛡️", name: "Node + Express", purpose: "RESTful API server with routing and middleware", owner: "p" },
-  { icon: "🍃", name: "MongoDB Atlas", purpose: "Cloud NoSQL database with Mongoose ODM", owner: "both" },
-  { icon: "▲", name: "Vercel", purpose: "Zero-config frontend deployment with Edge network", owner: "a" },
-  { icon: "🚀", name: "Render", purpose: "Backend deployment with auto-scaling web services", owner: "both" },
+  { icon: "⚛️", name: "React + Vite", purpose: "Frontend architecture with component-based design and fast HMR", owner: "a" },
+  { icon: "🎨", name: "Tailwind CSS", purpose: "Utility-first CSS for responsive design and rapid UI development", owner: "a" },
+  { icon: "🛡️", name: "Node + Express", purpose: "RESTful API server with routing and middleware architecture", owner: "p" },
+  { icon: "🍃", name: "MongoDB Atlas", purpose: "Cloud NoSQL database with optimized schema design", owner: "both" },
+  { icon: "▲", name: "Vercel", purpose: "Zero-config frontend deployment with Edge network optimization", owner: "both" },
+  { icon: "🚀", name: "Render", purpose: "Backend deployment with auto-scaling web services", owner: "p" },
   { icon: "🐙", name: "GitHub", purpose: "Version control, PRs, branch protection rules", owner: "both" },
-  { icon: "⚙️", name: "GitHub Actions", purpose: "CI/CD pipeline: build → test → deploy on push to main", owner: "both" },
   { icon: "📋", name: "GitHub Projects", purpose: "Kanban board for Agile task management", owner: "both" },
+  { icon: "🔧", name: "React Router", purpose: "Client-side routing and navigation architecture", owner: "a" },
+  { icon: "📦", name: "Axios", purpose: "HTTP client for API integration and state management", owner: "a" },
+  { icon: "🎯", name: "Framer Motion", purpose: "Animation library for smooth UI transitions", owner: "a" },
 ];
 
 const TIMELINE = [
-  { day: "01", label: "Setup",
-    anmol: { text: "GitHub repo + branch protection + Kanban board + React + Vite + Tailwind setup", branch: "feature/frontend-setup" },
+  { day: "01", label: "Architecture",
+    anmol: { text: "React component architecture + Tailwind design system + responsive grid setup", branch: "feature/frontend-architecture" },
     priyansu: { text: "Node.js + Express server + MongoDB Atlas cluster + Mongoose connection", branch: "feature/backend-setup" }},
   { day: "02", label: "Core",
-    anmol: { text: "Home page hero section, Navbar + Footer, React Router setup", branch: "feature/home-page" },
+    anmol: { text: "UI/UX implementation with Tailwind CSS + React Router + component library", branch: "feature/ui-ux-design" },
     priyansu: { text: "Projects REST API (GET/POST/DELETE), Contact form backend route", branch: "feature/projects-api" }},
-  { day: "03", label: "Pages",
-    anmol: { text: "Personal portfolio page — photo, skills grid, project cards, links", branch: "feature/anmol-page" },
-    priyansu: { text: "Personal portfolio page — same structure with own info and projects", branch: "feature/priyansu-page" }},
-  { day: "04", label: "Integration",
-    anmol: { text: "Contact form UI + Axios POST call to backend + success/error states", branch: "feature/contact-integration" },
-    priyansu: { text: "CORS config, .env setup with MONGO_URI, end-to-end API testing", branch: "feature/backend-config" }},
-  { day: "05", label: "Polish",
-    anmol: { text: "Projects API fetch + display, mobile responsive Tailwind, animations", branch: "feature/styling" },
-    priyansu: { text: "Error handling for all routes, try/catch, 404 handler, Postman testing", branch: "feature/api-testing" }},
-  { day: "06", label: "Deploy",
-    anmol: { text: "Vercel frontend deploy + env vars + GitHub Actions CI/CD", branch: "feature/deploy-frontend" },
-    priyansu: { text: "Render backend deploy + MongoDB Atlas IP whitelist for production", branch: "feature/deploy-backend" }},
-  { day: "07", label: "Ship",
-    anmol: { text: "Final PR review, README.md, full live site demo test", branch: null },
-    priyansu: { text: "Final PR review, screenshots of Kanban + Actions log, deploy verification", branch: null }},
+  { day: "03", label: "Integration",
+    anmol: { text: "API integration with Axios + state management + responsive mobile optimization", branch: "feature/api-integration" },
+    priyansu: { text: "Database schema design + API optimization + error handling", branch: "feature/database-design" }},
+  { day: "04", label: "Polish",
+    anmol: { text: "Performance optimization + code splitting + animation with Framer Motion", branch: "feature/performance-optimization" },
+    priyansu: { text: "Frontend UI testing + API documentation + deployment preparation", branch: "feature/ui-testing" }},
+  { day: "05", label: "Deploy",
+    anmol: { text: "Vercel frontend deployment + environment variables + production optimization", branch: "feature/deploy-frontend" },
+    priyansu: { text: "Render backend deployment + MongoDB production config + API testing", branch: "feature/deploy-backend" }},
+  { day: "06", label: "Ship",
+    anmol: { text: "Final UI review + performance testing + README documentation", branch: null },
+    priyansu: { text: "Final API testing + deployment verification + screenshots", branch: null }},
 ];
 
 const PROJECTS = [
