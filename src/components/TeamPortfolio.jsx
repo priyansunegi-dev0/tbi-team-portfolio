@@ -535,9 +535,31 @@ export default function TeamPortfolio() {
         <FadeIn>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: "1.5rem" }}>
             {PROJECTS.map((project, index) => (
-              <div key={index}>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+              <div key={index} style={{
+                background: "#16161f",
+                border: "1px solid #2a2a3a",
+                borderRadius: 12,
+                padding: "1.5rem",
+                transition: "all 0.3s ease",
+                cursor: "pointer"
+              }}>
+                <h3 style={{ 
+                  fontFamily: "'Syne', sans-serif", 
+                  fontWeight: 700, 
+                  fontSize: "1.1rem", 
+                  color: "#e8e8f0",
+                  margin: "0 0 1rem 0"
+                }}>
+                  {project.title}
+                </h3>
+                <p style={{ 
+                  fontSize: "0.8rem", 
+                  color: "#6b6b88", 
+                  lineHeight: 1.6, 
+                  margin: "0 0 1rem 0"
+                }}>
+                  {project.description}
+                </p>
               </div>
             ))}
           </div>
