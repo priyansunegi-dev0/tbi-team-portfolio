@@ -54,6 +54,25 @@ const TIMELINE = [
     priyansu: { text: "Final PR review, screenshots of Kanban + Actions log, deploy verification", branch: null }},
 ];
 
+const PROJECTS = [
+  {
+    title: "Hackathon Collab Project",
+    description: "A collaborative hackathon project built with team members featuring real-time features and modern tech stack.",
+    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+    github: "https://github.com/priyansunegi-dev0/hackathon-collab",
+    preview: "https://hackathon-collab.vercel.app",
+    status: "Live"
+  },
+  {
+    title: "Team Portfolio",
+    description: "This portfolio website showcasing our team collaboration and project management skills.",
+    tech: ["React", "Vite", "Tailwind CSS"],
+    github: "https://github.com/priyansunegi-dev0/tbi-team-portfolio",
+    preview: "https://tbi-team-portfolio.vercel.app",
+    status: "Live"
+  }
+];
+
 const WORKFLOW_STEPS = [
   { num: "01", name: "Branch", desc: "Create feature branch from develop. Never commit directly to main." },
   { num: "02", name: "Commit", desc: "Follow prefix format: feat: fix: style: chore: for clean history." },
@@ -510,9 +529,153 @@ export default function TeamPortfolio() {
         </FadeIn>
       </section>
 
+      {/* ════════════ PROJECTS ════════════ */}
+      <section id="projects" style={{ padding: `${secPy} ${px}`, maxWidth: 1200, margin: "0 auto" }}>
+        <SectionHeader num="04" title="Our Projects" isMobile={isMobile} />
+        <FadeIn>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: "1.5rem" }}>
+            {PROJECTS.map((project, index) => (
+              <div key={index} style={{
+                background: "#16161f",
+                border: "1px solid #2a2a3a",
+                borderRadius: 12,
+                padding: "1.5rem",
+                transition: "all 0.3s ease",
+                cursor: "pointer"
+              }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.border = "1px solid #a78bfa";
+                  e.currentTarget.style.boxShadow = "0 8px 32px rgba(167, 139, 250, 0.1)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.border = "1px solid #2a2a3a";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
+                  <h3 style={{ 
+                    fontFamily: "'Syne', sans-serif", 
+                    fontWeight: 700, 
+                    fontSize: "1.1rem", 
+                    color: "#e8e8f0",
+                    margin: 0
+                  }}>
+                    {project.title}
+                  </h3>
+                  <span style={{
+                    background: project.status === "Live" ? "#10b981" : "#f59e0b",
+                    color: "#ffffff",
+                    padding: "0.25rem 0.75rem",
+                    borderRadius: 999,
+                    fontSize: "0.65rem",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em"
+                  }}>
+                    {project.status}
+                  </span>
+                </div>
+                
+                <p style={{ 
+                  fontSize: "0.8rem", 
+                  color: "#6b6b88", 
+                  lineHeight: 1.6, 
+                  marginBottom: "1rem" 
+                }}>
+                  {project.description}
+                </p>
+                
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.25rem" }}>
+                  {project.tech.map((tech, techIndex) => (
+                    <span key={techIndex} style={{
+                      background: "#111118",
+                      color: "#a78bfa",
+                      padding: "0.25rem 0.75rem",
+                      borderRadius: 6,
+                      fontSize: "0.65rem",
+                      fontWeight: 500,
+                      border: "1px solid #2a2a3a"
+                    }}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <div style={{ display: "flex", gap: "0.75rem" }}>
+                  <a 
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.5rem",
+                      background: "#2a2a3a",
+                      color: "#e8e8f0",
+                      padding: "0.75rem 1rem",
+                      borderRadius: 8,
+                      fontSize: "0.75rem",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      transition: "all 0.2s ease",
+                      border: "1px solid #2a2a3a"
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = "#3a3a4a";
+                      e.currentTarget.style.color = "#a78bfa";
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = "#2a2a3a";
+                      e.currentTarget.style.color = "#e8e8f0";
+                    }}
+                  >
+                    <span>🐙</span> GitHub
+                  </a>
+                  <a 
+                    href={project.preview}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.5rem",
+                      background: "#a78bfa",
+                      color: "#ffffff",
+                      padding: "0.75rem 1rem",
+                      borderRadius: 8,
+                      fontSize: "0.75rem",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      transition: "all 0.2s ease",
+                      border: "1px solid #a78bfa"
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = "#8b5cf6";
+                      e.currentTarget.style.transform = "translateY(-1px)";
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = "#a78bfa";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}
+                  >
+                    <span>🚀</span> Live Demo
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </section>
+
       {/* ════════════ WORKFLOW ════════════ */}
       <section id="workflow" style={{ padding: `${secPy} ${px}`, maxWidth: 1200, margin: "0 auto" }}>
-        <SectionHeader num="04" title="Git Workflow" isMobile={isMobile} />
+        <SectionHeader num="05" title="Git Workflow" isMobile={isMobile} />
         <FadeIn>
           <div style={{ display: "grid", gridTemplateColumns: flowCols, gap: 1, background: "#2a2a3a", border: "1px solid #2a2a3a", borderRadius: 8, overflow: "hidden", marginBottom: "1.5rem" }}>
             {WORKFLOW_STEPS.map(step => (
