@@ -543,23 +543,54 @@ export default function TeamPortfolio() {
                 transition: "all 0.3s ease",
                 cursor: "pointer"
               }}>
-                <h3 style={{ 
-                  fontFamily: "'Syne', sans-serif", 
-                  fontWeight: 700, 
-                  fontSize: "1.1rem", 
-                  color: "#e8e8f0",
-                  margin: "0 0 1rem 0"
-                }}>
-                  {project.title}
-                </h3>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
+                  <h3 style={{ 
+                    fontFamily: "'Syne', sans-serif", 
+                    fontWeight: 700, 
+                    fontSize: "1.1rem", 
+                    color: "#e8e8f0",
+                    margin: 0
+                  }}>
+                    {project.title}
+                  </h3>
+                  <span style={{
+                    background: project.status === "Live" ? "#10b981" : "#f59e0b",
+                    color: "#ffffff",
+                    padding: "0.25rem 0.75rem",
+                    borderRadius: 999,
+                    fontSize: "0.65rem",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em"
+                  }}>
+                    {project.status}
+                  </span>
+                </div>
+                
                 <p style={{ 
                   fontSize: "0.8rem", 
                   color: "#6b6b88", 
                   lineHeight: 1.6, 
-                  margin: "0 0 1rem 0"
+                  marginBottom: "1rem" 
                 }}>
                   {project.description}
                 </p>
+                
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.25rem" }}>
+                  {project.tech.map((tech, techIndex) => (
+                    <span key={techIndex} style={{
+                      background: "#111118",
+                      color: "#a78bfa",
+                      padding: "0.25rem 0.75rem",
+                      borderRadius: 6,
+                      fontSize: "0.65rem",
+                      fontWeight: 500,
+                      border: "1px solid #2a2a3a"
+                    }}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
