@@ -591,6 +591,55 @@ export default function TeamPortfolio() {
                     </span>
                   ))}
                 </div>
+                
+                <div style={{ display: "flex", gap: "0.75rem" }}>
+                  <a 
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.5rem",
+                      background: "#2a2a3a",
+                      color: "#e8e8f0",
+                      padding: "0.75rem 1rem",
+                      borderRadius: 8,
+                      fontSize: "0.75rem",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      transition: "all 0.2s ease",
+                      border: "1px solid #2a2a3a"
+                    }}
+                  >
+                    <span>🐙</span> GitHub
+                  </a>
+                  <a 
+                    href={project.preview}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.5rem",
+                      background: "#a78bfa",
+                      color: "#ffffff",
+                      padding: "0.75rem 1rem",
+                      borderRadius: 8,
+                      fontSize: "0.75rem",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      transition: "all 0.2s ease",
+                      border: "1px solid #a78bfa"
+                    }}
+                  >
+                    <span>🚀</span> Live Demo
+                  </a>
+                </div>
               </div>
             ))}
           </div>
