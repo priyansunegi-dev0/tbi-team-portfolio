@@ -9,6 +9,8 @@ const ANMOL_TASKS = [
   { label: "API Integration & State Management", branch: "feature/api-integration" },
   { label: "Database Schema Design & Optimization", branch: "feature/database-design" },
   { label: "Performance Optimization & Code Splitting", branch: "feature/performance-optimization" },
+  { label: "Component Library & Design System", branch: "feature/component-library" },
+  { label: "Animation & Micro-interactions", branch: "feature/animations" },
 ];
 
 const PRIYANSU_TASKS = [
