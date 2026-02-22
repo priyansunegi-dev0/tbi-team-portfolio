@@ -17,8 +17,11 @@ const PRIYANSU_TASKS = [
   { label: "Node.js + Express Server Setup", branch: "feature/backend-setup" },
   { label: "MongoDB Atlas + Mongoose", branch: "feature/db-connect" },
   { label: "Projects & Contact APIs", branch: "feature/projects-api" },
-  { label: "Frontend UI Testing & Feedback", branch: "feature/ui-testing" },
-  { label: "Render Deployment & API Docs", branch: "feature/deploy-backend" },
+  { label: "Authentication & Security Implementation", branch: "feature/auth-security" },
+  { label: "API Testing & Documentation", branch: "feature/api-testing" },
+  { label: "Render Deployment & Monitoring", branch: "feature/deploy-backend" },
+  { label: "Database Performance Optimization", branch: "feature/db-optimization" },
+  { label: "Backend Architecture & Scaling", branch: "feature/backend-architecture" },
 ];
 
 const TECH_STACK = [
