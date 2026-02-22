@@ -542,7 +542,18 @@ export default function TeamPortfolio() {
                 padding: "1.5rem",
                 transition: "all 0.3s ease",
                 cursor: "pointer"
-              }}>
+              }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.border = "1px solid #a78bfa";
+                  e.currentTarget.style.boxShadow = "0 8px 32px rgba(167, 139, 250, 0.1)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.border = "1px solid #2a2a3a";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
                   <h3 style={{ 
                     fontFamily: "'Syne', sans-serif", 
@@ -613,6 +624,14 @@ export default function TeamPortfolio() {
                       transition: "all 0.2s ease",
                       border: "1px solid #2a2a3a"
                     }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = "#3a3a4a";
+                      e.currentTarget.style.color = "#a78bfa";
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = "#2a2a3a";
+                      e.currentTarget.style.color = "#e8e8f0";
+                    }}
                   >
                     <span>🐙</span> GitHub
                   </a>
@@ -635,6 +654,14 @@ export default function TeamPortfolio() {
                       textDecoration: "none",
                       transition: "all 0.2s ease",
                       border: "1px solid #a78bfa"
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = "#8b5cf6";
+                      e.currentTarget.style.transform = "translateY(-1px)";
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = "#a78bfa";
+                      e.currentTarget.style.transform = "translateY(0)";
                     }}
                   >
                     <span>🚀</span> Live Demo
