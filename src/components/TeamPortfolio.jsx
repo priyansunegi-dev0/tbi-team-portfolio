@@ -36,6 +36,8 @@ const TECH_STACK = [
   { icon: "🔧", name: "React Router", purpose: "Client-side routing and navigation architecture", owner: "a" },
   { icon: "📦", name: "Axios", purpose: "HTTP client for API integration and state management", owner: "a" },
   { icon: "🎯", name: "Framer Motion", purpose: "Animation library for smooth UI transitions", owner: "a" },
+  { icon: "🔐", name: "JWT Auth", purpose: "Token-based authentication and security implementation", owner: "p" },
+  { icon: "📊", name: "Postman", purpose: "API testing, documentation and collaboration", owner: "p" },
 ];
 
 const TIMELINE = [
