@@ -65,18 +65,26 @@ const PROJECTS = [
   {
     title: "Hackathon Collab Project",
     description: "A collaborative hackathon project built with team members featuring real-time features and modern tech stack.",
-    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+    tech: ["React", "Node.js", "MongoDB", "Socket.io", "JWT Auth"],
     github: "https://github.com/priyansunegi-dev0/hackathon-collab",
     preview: "https://hackathon-collab.vercel.app",
     status: "Live"
   },
   {
     title: "Team Portfolio",
-    description: "This portfolio website showcasing our team collaboration and project management skills.",
-    tech: ["React", "Vite", "Tailwind CSS"],
+    description: "This portfolio website showcasing our team collaboration and project management skills with modern UI/UX.",
+    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/priyansunegi-dev0/tbi-team-portfolio",
     preview: "https://tbi-team-portfolio.vercel.app",
     status: "Live"
+  },
+  {
+    title: "E-Commerce Platform",
+    description: "Full-stack e-commerce solution with payment integration and admin dashboard.",
+    tech: ["React", "Node.js", "MongoDB", "Stripe API", "JWT Auth"],
+    github: "https://github.com/priyansunegi-dev0/ecommerce-platform",
+    preview: "https://ecommerce-demo.vercel.app",
+    status: "Development"
   }
 ];
 
